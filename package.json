@@ -1,0 +1,36 @@
+{
+  "name": "browser",
+  "version": "1.0.0",
+  "main": "main.js",
+  "productName":"Browser",
+  "scripts": {
+    "start": "electron .",
+    "build-installer":"electron-builder"
+  },
+"build": {
+  "appId": "cool-app",
+  "win": {
+    "target": [
+      "nsis"
+    ],
+    "icon": "app/icon.ico",
+    "requestedExecutionLevel": "requireAdministrator"
+  },
+  "nsis": {
+    "installerIcon": "app/icon.ico",
+    "uninstallerIcon": "app/icon.ico",
+    "uninstallDisplayName": "CPU Monitor",
+    "license": "license.txt",
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  }
+},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "electron": "^31.0.1",
+     "electron-builder": "^24.13.3"
+  }
+}
