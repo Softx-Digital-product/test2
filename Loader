@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Loading Bar</title>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #3498db;
+    z-index: 1000;
+    transition: width 0.4s ease;
+}
+
+.content {
+    padding: 20px;
+}
+
+</style>
+</head>
+<body>
+    <div id="loading-bar"></div>
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>This is a simple example of a top loading bar using HTML, CSS, and JavaScript.</p>
+   <img src="https://t4.ftcdn.net/jpg/06/41/42/69/240_F_641426931_sJkCqdIkiI5GPtbBQ92S7xIJk9akRo33.jpg" alt="">
+   <img src="https://t4.ftcdn.net/jpg/06/41/42/69/240_F_641426931_sJkCqdIkiI5GPtbBQ92S7xIJk9akRo33.jpg" alt="">
+   <img src="https://t4.ftcdn.net/jpg/06/41/42/69/240_F_641426931_sJkCqdIkiI5GPtbBQ92S7xIJk9akRo33.jpg" alt="">
+   <img src="https://t4.ftcdn.net/jpg/06/41/42/69/240_F_641426931_sJkCqdIkiI5GPtbBQ92S7xIJk9akRo33.jpg" alt="">
+   <img src="https://t4.ftcdn.net/jpg/06/41/42/69/240_F_641426931_sJkCqdIkiI5GPtbBQ92S7xIJk9akRo33.jpg" alt="">
+   <img src="https://t4.ftcdn.net/jpg/08/19/70/01/240_F_819700174_8iUlpvUpOgbQZgKLHGE9YO31DNeD8Lrs.jpg" alt="">
+   
+   
+    </div>
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    const loadingBar = document.getElementById('loading-bar');
+
+    function updateLoadingBar() {
+        let width = 0;
+        const interval = setInterval(function() {
+            if (width >= 90) {  // We simulate 90% to not complete the bar till the window load event
+                clearInterval(interval);
+            } else {
+                width += 1;
+                loadingBar.style.width = width + '%';
+            }
+        }, 50);  // Speed of the loading bar
+    }
+
+    // Simulate loading processs
+    updateLoadingBar();
+
+    window.addEventListener('load', function() {
+        // Complete the loading bar when the page fully loads
+        loadingBar.style.width = '100%';
+
+        // Optionally hide the loading bar after a delay
+        setTimeout(() => {
+            loadingBar.style.opacity = 0;
+        }, 500);
+    });
+});
+
+
+    </script>
+</body>
+</html>
